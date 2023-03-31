@@ -18,6 +18,7 @@
 
     body {
       height: 100%;
+      min-height: 500px;
       min-width: 800px;
     }
 
@@ -38,7 +39,7 @@
 
     aside div {
       margin-top: 10px;
-      height: 90%;
+      height: calc(100% - (31.5px + 24px + 10px));
       overflow: auto;
     }
 
@@ -85,7 +86,7 @@
     }
 
     .content {
-      height: 92%;
+      height: calc(100% - 51px);
       overflow: auto;
       border-top: 1px solid;
     }
