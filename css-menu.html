@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css-menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+    }
+
+    nav {
+      height: 6%;
+      background-color: lightcoral;
+    }
+
+    section {
+      display: inline-block;
+      width: 10%;
+      text-align: center;
+      height: 100%;
+      line-height: 100%;
+      box-sizing: border-box;
+      padding-top: 6px;
+      vertical-align: top;
+    }
+
+    section:first-of-type {
+      margin-left: 5%;
+    }
+
+    section:hover {
+      cursor: pointer;
+      background-color: brown;
+    }
+
+    section:hover .first-file {
+      display: block;
+    }
+
+    .first-file {
+      position: fixed;
+      top: 6%;
+    }
+
+    ul {
+      width: 200px;
+      height: 300px;
+      background-color: grey;
+      list-style: none;
+      display: none;
+    }
+
+    li {
+      box-sizing: border-box;
+      padding-left: 20px;
+      margin-top: 20px;
+      text-align: left;
+      /* border: 1px solid; */
+    }
+
+    li:hover {
+      background-color: skyblue;
+    }
+
+    .first-file>li:last-of-type::after {
+      content: "";
+      display: inline-block;
+      background: url("img/right.png");
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      margin-left: 50px;
+      vertical-align: -3px;
+    }
+
+    li:last-of-type:hover .latest-file {
+      display: block;
+    }
+
+    .latest-file {
+      position: absolute;
+      top: 230px;
+      left: 200px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <section class=".file">文件
+      <ul class="first-file">
+        <li>新建文本文件</li>
+        <li>新建文件...</li>
+        <li>新建窗口</li>
+        <li>打开...</li>
+        <li>打开文件夹...</li>
+        <li>从文件打开工作区...</li>
+        <li>打开最近文件
+          <ul class="latest-file">
+            <li>重新打开已关闭的编辑器</li>
+            <li>更多...</li>
+            <li>清除最近打开记录</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>编辑</section>
+    <section>选择</section>
+    <section>查看</section>
+    <section>转到</section>
+  </nav>
+</body>
+
+</html>
