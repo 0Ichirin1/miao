@@ -37,22 +37,13 @@
       background-color: brown;
     }
 
-    section:hover .first-file {
-      display: block;
-    }
-
-    .first-file {
-      position: fixed;
-      top: 40px;
-    }
-
     ul {
       width: 200px;
       height: 300px;
       background-color: grey;
       list-style: none;
-      display: none;
       border-radius: 5px;
+      display: none;
     }
 
     li {
@@ -64,6 +55,16 @@
 
     li:hover {
       background-color: skyblue;
+    }
+
+    /* 文件区 */
+    section:hover .first-file {
+      display: block;
+    }
+
+    .first-file {
+      position: fixed;
+      top: 40px;
     }
 
     .first-file>li:last-of-type::after {
@@ -84,6 +85,37 @@
     .latest-file {
       position: absolute;
       top: 230px;
+      left: 200px;
+    }
+
+    /* 编辑区 */
+    section:hover .first-edit {
+      display: block;
+    }
+
+    .first-edit {
+      position: fixed;
+      top: 40px;
+    }
+
+    .first-edit>li:nth-of-type(5)::after {
+      content: "";
+      display: inline-block;
+      background: url("img/right.png");
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      margin-left: 100px;
+      vertical-align: -3px;
+    }
+
+    .first-edit li:nth-of-type(5):hover .latest-edit {
+      display: block;
+    }
+
+    .latest-edit {
+      position: absolute;
+      top: 160px;
       left: 200px;
     }
 
@@ -109,7 +141,21 @@
         </li>
       </ul>
     </section>
-    <section>编辑</section>
+    <section>编辑
+      <ul class="first-edit">
+        <li>撤销</li>
+        <li>恢复</li>
+        <li>剪切</li>
+        <li>复制</li>
+        <li>复制为
+          <ul class="latest-edit">
+            <li>Copy Remote File URL</li>
+            <li>Copy Remote File URL From...</li>
+          </ul>
+        </li>
+        <li>粘贴</li>
+      </ul>
+    </section>
     <section>选择</section>
     <section>查看</section>
     <section>转到</section>
